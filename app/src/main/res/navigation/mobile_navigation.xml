@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.laboratorio1.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.laboratorio1.ui.register.RegisterFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.laboratorio1.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_trailerFragment"
+            app:destination="@id/trailerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trailerFragment"
+        android:name="com.example.laboratorio1.TrailerFragment"
+        android:label="Conoce mas"
+        tools:layout="@layout/fragment_trailer" >
+        <argument
+            android:name="datos"
+            app:argType="com.example.laboratorio1.ui.clases.Peli" />
+    </fragment>
+</navigation>
