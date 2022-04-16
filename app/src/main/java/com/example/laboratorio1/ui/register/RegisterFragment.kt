@@ -83,7 +83,7 @@ class RegisterFragment : Fragment() {
                     "(?=.*[A-Z])" + // al menos una mayuscula
                     "(?=.*[@#$%^&+=?!])" + // al menos un caracter especial
                     "(?=\\S+$)" + // no espacios en blanco
-                    ".{8,}" + //longitud minima
+                    ".{6,}" + //longitud minima
                     "$" // simbolo de cierre
         )
         return if (pwd.isEmpty()) {
@@ -91,7 +91,7 @@ class RegisterFragment : Fragment() {
             false
         } else if (!passwordRegex.matcher(pwd).matches()) {
             binding.itPwd.error =
-                "Ingrese una contraseña con minimo 8 caracteres, 1 mayuscula, 1 minuscula, 1 caracter especial, 1 numero y sin espacios en blanco"
+                "Ingrese una contraseña con minimo 6 caracteres, 1 mayuscula, 1 minuscula, 1 caracter especial, 1 numero y sin espacios en blanco"
             false
         } else {
             binding.itPwd.error = null
